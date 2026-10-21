@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PixelVault - toko game digital, voucher, dan produk gaming.">
+  <title>PixelVault — Digital Game Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">⚡ PROMO GAMING MINGGU INI — cek produk pilihan di bawah</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="PixelVault beranda"><span class="brand-mark">P</span><span>PIXEL<span class="accent">VAULT</span></span></a>
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <a href="#beranda">Beranda</a><a href="#produk">Produk</a><a href="#kategori">Kategori</a><a href="#tentang">Tentang</a>
+    </nav>
+    <button class="cart-button" id="cartToggle" aria-label="Buka keranjang">🛒 <span>Keranjang</span> <b id="cartCount">0</b></button>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="live-dot"></span> DIGITAL GAME STORE</span>
+        <h1>LEVEL UP<br>YOUR <span class="gradient-text">GAME.</span></h1>
+        <p>Temukan game digital, voucher, dan kebutuhan gaming favoritmu. Praktis, cepat, dan siap menemani petualangan berikutnya.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#produk">Jelajahi Produk <span>↗</span></a><a class="text-link" href="#kategori">Lihat kategori <span>→</span></a></div>
+        <div class="hero-stats"><div><strong>100%</strong><small>Digital</small></div><div><strong>24/7</strong><small>Belanja online</small></div><div><strong>Easy</strong><small>Checkout demo</small></div></div>
+      </div>
+      <div class="hero-art" aria-label="Ilustrasi kontroler gaming">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="game-tile tile-back"><span>GAMES</span><b>UNLOCK<br>YOUR<br>WORLD</b></div>
+        <div class="controller">
+          <div class="controller-top"></div><div class="dpad"><i></i><b></b></div>
+          <div class="sticks"><i></i><i></i></div><div class="buttons"><i>△</i><i>○</i><i>×</i><i>□</i></div>
+        </div>
+        <div class="floating-tag tag-one">✦ DIGITAL DELIVERY</div><div class="floating-tag tag-two">GAME ON <span>●</span></div>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Keunggulan toko">
+      <div><span class="benefit-icon">⚡</span><span><b>Serba Digital</b><small>Tanpa kirim barang fisik</small></span></div>
+      <div><span class="benefit-icon">🔒</span><span><b>Transaksi Praktis</b><small>Alur belanja sederhana</small></span></div>
+      <div><span class="benefit-icon">🎮</span><span><b>Pilihan Gaming</b><small>Game dan voucher favorit</small></span></div>
+    </section>
+
+    <section class="section categories" id="kategori">
+      <div class="section-heading"><div><span class="eyebrow">PILIH DUNIAMU</span><h2>Kategori <span class="accent">Populer</span></h2></div><p>Mulai dari game sampai saldo digital.</p></div>
+      <div class="category-grid">
+        <button class="category-card active" data-category="Semua"><span class="category-emoji">🎮</span><b>Semua Produk</b><small>Lihat semuanya</small></button>
+        <button class="category-card" data-category="Game PC"><span class="category-emoji">🖥️</span><b>Game PC</b><small>Game komputer</small></button>
+        <button class="category-card" data-category="Konsol"><span class="category-emoji">🕹️</span><b>Game Konsol</b><small>PlayStation & lainnya</small></button>
+        <button class="category-card" data-category="Voucher"><span class="category-emoji">💎</span><b>Voucher</b><small>Top up & saldo</small></button>
+      </div>
+    </section>
+
+    <section class="section products-section" id="produk">
+      <div class="section-heading"><div><span class="eyebrow">PILIHAN MINGGU INI</span><h2>Produk <span class="accent">Digital</span></h2></div><div class="product-tools"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Cari produk..." aria-label="Cari produk"></label><select id="sortSelect" aria-label="Urutkan produk"><option value="featured">Pilihan</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option></select></div></div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>Produk tidak ditemukan. Coba kata kunci lain.</p>
+    </section>
+
+    <section class="promo-banner" id="tentang"><div class="promo-symbol">✦</div><div><span class="eyebrow">SIAP UNTUK LEVEL BERIKUTNYA?</span><h2>Waktunya <span class="gradient-text">Main.</span></h2><p>Temukan item digital yang cocok untuk petualanganmu.</p></div><a class="btn btn-light" href="#produk">Belanja sekarang ↗</a></section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">P</span><span>PIXEL<span class="accent">VAULT</span></span></a><p>© <span id="year"></span> PixelVault. Template toko game digital.</p><p class="footer-note">Demo frontend — produk, harga, dan checkout perlu disesuaikan sebelum digunakan untuk transaksi nyata.</p></footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Keranjang belanja" aria-hidden="true">
+    <div class="cart-head"><div><span class="eyebrow">PESANANMU</span><h2>Keranjang</h2></div><button id="cartClose" class="icon-button" aria-label="Tutup keranjang">✕</button></div>
+    <div id="cartItems" class="cart-items"><p class="cart-empty">Keranjangmu masih kosong.</p></div>
+    <div class="cart-footer"><div class="total-line"><span>Total</span><strong id="cartTotal">Rp0</strong></div><button id="checkoutButton" class="btn btn-primary full-width">Lanjut checkout ↗</button><small>Checkout masih berupa demo dan belum memproses pembayaran.</small></div>
+  </aside>
+  <div class="drawer-scrim" id="drawerScrim"></div>
+  <script src="script.js"></script>
+</body>
+</html>
